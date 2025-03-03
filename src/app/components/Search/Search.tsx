@@ -10,7 +10,7 @@ export function Search({ onSearch, ...props }: SearchProps) {
     <TextInput
       radius="sm"
       size="md"
-      placeholder="Search questions"
+      placeholder="Search movies..."
       rightSectionWidth={42}
       leftSection={<IconSearch size={18} stroke={1.5} />}
       rightSection={
