@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, extract all movie data csvs into data folder
@@ -12,7 +10,7 @@ First, extract all movie data csvs into data folder
 Then run preprocess.js to extract the first 500 movies together with its links, tags and ratings.
 
 ```bash
-node preprocess.js`
+node preprocess.js
 ```
 
 But you can skip this step and use the preprocessed data I've uploaded in the data folder.
