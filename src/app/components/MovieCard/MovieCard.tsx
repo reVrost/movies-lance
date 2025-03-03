@@ -1,8 +1,22 @@
-import { IconEye, IconMessageCircle } from "@tabler/icons-react";
+import { IconStarFilled } from "@tabler/icons-react";
 import { Card, Center, Group, Text, useMantineTheme } from "@mantine/core";
 import classes from "./MovieCard.module.css";
 
-export function MovieCard() {
+export interface MovieCardProps {
+  title: string;
+  genres: string;
+  tags: string;
+  rating: string;
+  imdbLink: string;
+}
+
+export function MovieCard({
+  title,
+  genres,
+  tags,
+  rating,
+  imdbLink,
+}: MovieCardProps) {
   const theme = useMantineTheme();
 
   return (
@@ -12,7 +26,7 @@ export function MovieCard() {
       className={classes.card}
       radius="md"
       component="a"
-      href="https://mantine.dev/"
+      href={imdbLink}
       target="_blank"
     >
       <div
@@ -27,29 +41,19 @@ export function MovieCard() {
       <div className={classes.content}>
         <div>
           <Text size="lg" className={classes.title} fw={500}>
-            Journey to Swiss Alps
+            {title}
           </Text>
 
           <Group justify="space-between" gap="xs">
             <Text size="sm" className={classes.author}>
-              Robert Gluesticker
+              {genres.replaceAll("|", ", ")}
             </Text>
 
             <Group gap="lg">
               <Center>
-                <IconEye size={16} stroke={1.5} color={theme.colors.dark[2]} />
+                <IconStarFilled size={16} color={theme.colors.yellow[6]} />
                 <Text size="sm" className={classes.bodyText}>
-                  7847
-                </Text>
-              </Center>
-              <Center>
-                <IconMessageCircle
-                  size={16}
-                  stroke={1.5}
-                  color={theme.colors.dark[2]}
-                />
-                <Text size="sm" className={classes.bodyText}>
-                  5
+                  {rating}
                 </Text>
               </Center>
             </Group>

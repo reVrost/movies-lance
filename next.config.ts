@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 import bundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzer = bundleAnalyzer({

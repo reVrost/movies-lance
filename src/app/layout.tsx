@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
 
 import {
   ColorSchemeScript,
@@ -8,6 +9,7 @@ import {
 } from "@mantine/core";
 
 import { Geist, Geist_Mono } from "next/font/google";
+import { Notifications } from "@mantine/notifications";
 
 export const metadata: Metadata = {
   title: "VectorFlix",
@@ -35,7 +37,12 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider
+          theme={{ primaryColor: "orange", fontFamily: "Geist" }}
+        >
+          <Notifications />
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );
